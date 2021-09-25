@@ -1,10 +1,9 @@
-import React from "react";
-import { Logon } from "./pages/Logon";
+import { List } from "./pages/List";
 
 export function App() {
   return (
     <>
-      <Logon />
+      <List />
     </>
   );
 }
