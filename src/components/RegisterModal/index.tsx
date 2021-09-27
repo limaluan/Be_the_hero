@@ -2,7 +2,6 @@ import closeImg from '../../assets/close.svg';
 import logoImg from '../../assets/logo.svg';
 import Modal from 'react-modal';
 import { Container, Form } from "./styles";
-import { Button } from "../Button";
 
 interface modalProps {
     isOpen: boolean;
@@ -33,7 +32,7 @@ export function RegisterModal({ isOpen, onRequestClose }: modalProps) {
                     <input type="text" placeholder='Cidade' />
                     <input type="text" placeholder='UF' maxLength={2} />
                 </div>
-                <Button>Cadastrar</Button>
+                <button>Cadastrar</button>
             </Form>
         </Modal>
     );

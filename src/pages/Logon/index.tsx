@@ -3,7 +3,6 @@ import peoplesImg from '../../assets/peoples.svg';
 import backImg from '../../assets/back.svg';
 
 import Modal from 'react-modal';
-import { ButtonStyled } from '../../components/Button/styles';
 
 import { Form, Container } from './styles';
 import React, { useState } from 'react';
@@ -34,7 +33,7 @@ export function Logon() {
 
                 <label className='sr-only'>Sua ID</label>
                 <input type="text" placeholder='Sua ID' />
-                <ButtonStyled>Entrar</ButtonStyled>
+                <button>Entrar</button>
 
                 <p onClick={handleOpenRegisterModal}>
                     <img src={backImg} alt="Voltar" />

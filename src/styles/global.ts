@@ -28,7 +28,7 @@ export default createGlobalStyle`
         font-weight: 400;
     }
 
-    input {
+    input, textarea {
         background-color: #FFFFFF;
         
         border: 1px solid var(--gray-light);
@@ -36,14 +36,38 @@ export default createGlobalStyle`
         padding: 2rem 0 2rem 2.5rem;
 
         color: var(---subtext);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
         font-size: 1.8rem;
+
+        resize: none;
+    }
+    
+    button {
+        font-size: 1.8rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        color: var(--background);
+
+        border: none;
+        border-radius: 8px;
+        padding: 2rem 0;
+        
+        background-color: var(--red);
+        transition: filter 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            filter: brightness(0.9);
+        }
     }
     
     .register-modal-overlay {
         display: flex;
         align-items: center;
         justify-content: center;
-
+        background-color: rgba(255,255,255,0.4);
+        
         position: fixed;
         top: 0;
         bottom: 0;

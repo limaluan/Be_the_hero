@@ -58,9 +58,29 @@ export const Form = styled.form`
         & input:last-child {
             flex: 1;
         }
+        
+        /* Cancel Button */
+        & button:first-child {
+            flex: 4;
+            margin-right: 0.8rem;
+
+            color: var(--subtitle);
+            background-color: var(--background);
+            border: 1px solid var(--gray-light);
+        }
+        
+        /* Register Button */
+        & button:last-child {
+            flex: 6;
+        }
     }
 
     button {
         width: 100%;
+    }
+
+    & textarea {
+        height: 17.5rem;
+        margin-bottom: 0.8rem;
     }
 `;
