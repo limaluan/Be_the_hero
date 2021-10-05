@@ -47,6 +47,21 @@ export const Header = styled.header`
         border: var(--gray-light) 1px solid;
         background-color: transparent;
     }
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+
+        /* Logo */
+        & div:first-child {
+            margin-bottom: 20px;
+            flex-direction: column;
+
+            & > img {
+                margin: 0 0 10px 0;
+            }
+        }
+    }
 `;
 
 export const Main = styled.main`
@@ -59,21 +74,25 @@ export const Main = styled.main`
 
         margin-bottom: 3.2rem;
     }
+
+    @media (max-width: 1360px) {
+        padding: 0 4rem;
+        text-align: center;
+    }
 `;
 
-export const CasesContainer = styled.article`
+export const CasesContainer = styled.ul`
     display: grid;
-    align-items: center;
-    justify-content: center;
     grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
     
-    article {
+    li {
         border: 1px solid var(--gray-light);
         border-radius: 8px;
 
         width: 50rem;
         padding: 3.2rem;
+        margin: 0 auto;
         
         position: relative;
         background-color: #FFFFFF;

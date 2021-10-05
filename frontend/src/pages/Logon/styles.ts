@@ -11,11 +11,21 @@ export const Container = styled.div`
     width: 100vw;
     
     #logo {
-        margin-bottom: 10rem;
+        margin-bottom: 5vw;
     }
 
     & > img:last-child {
         width: 75rem;
+    }
+
+    @media (max-width: 1000px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & > img:last-child {
+            display: none;
+        }
     }
 `;
 

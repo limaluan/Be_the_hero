@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 
 import { Container, Form } from "../RegisterModal/styles";
 import { FormEvent, useState } from 'react';
-import { api } from '../../services/api';
+import { useCases } from '../../hooks/useCase';
 
 interface RegisterModalProps {
     isOpen: boolean;
@@ -15,13 +15,19 @@ export function RegisterCaseModal({ isOpen, onRequestClose }: RegisterModalProps
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [value, setValue] = useState(0);
+    const { createCase } = useCases();
 
-    function handleSubmitCase(e: FormEvent) {
+    async function handleSubmitCase(e: FormEvent) {
         e.preventDefault();
 
-        api.post('/cases', {
+        createCase({
             title, desc, value, date: 999999, ong_id: 2
         })
+
+        setTitle('');
+        setDesc('');
+        setValue(0);
+        onRequestClose();
     }
 
     return (

@@ -3,19 +3,17 @@ import powerImg from '../../assets/power.svg';
 import deleteImg from '../../assets/delete.svg';
 
 import Modal from 'react-modal';
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Header, Main, CasesContainer } from './styles';
 
 import { RegisterCaseModal } from '../../components/RegisterCaseModal';
-import { api } from '../../services/api';
-import { CasesContext } from '../../Context';
+import { useCases } from '../../hooks/useCase';
 
 Modal.setAppElement('#root');
 
 export function List() {
     const [isRegisterCaseModalOpen, setIsRegisterCaseModalOpen] = useState(false);
-    const { user, cases } = useContext(CasesContext);
-
+    const { user, cases } = useCases();
     function handleModalOpen() {
         setIsRegisterCaseModalOpen(true);
     }
@@ -46,7 +44,7 @@ export function List() {
                 <h1>Casos cadastrados</h1>
                 <CasesContainer>
                     {cases.map((Case) => (
-                        <article key={Case.id}>
+                        <li key={Case.id}>
                             <img src={deleteImg} alt="Deletar" />
                             <h3>Caso:</h3>
                             <p>{Case.title}</p>
@@ -60,7 +58,7 @@ export function List() {
                                 currency: 'BRL'
                             }).format(Case.value)
                             }</p>
-                        </article>
+                        </li>
                     ))}
 
                 </CasesContainer>

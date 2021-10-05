@@ -51,21 +51,21 @@ createServer({
   },
 
   routes() {
-    this.namespace = 'api',
+    this.namespace = 'api';
 
-      this.get('/ongs', () => this.schema.all('users')),
+    this.get('/ongs', () => this.schema.all('users'));
 
-      this.post('/ongs', (schema, request) => {
-        const data = JSON.parse(request.requestBody);
-        return schema.create('users', data);
-      }),
+    this.post('/ongs', (schema, request) => {
+      const data = JSON.parse(request.requestBody);
+      return schema.create('users', data);
+    });
 
-      this.get('/cases', () => this.schema.all('cases')),
+    this.get('/cases', () => this.schema.all('cases'));
 
-      this.post('/cases', (schema, request) => {
-        const data = JSON.parse(request.requestBody);
-        return schema.create('cases', data);
-      })
+    this.post('/cases', (schema, request) => {
+      const data = JSON.parse(request.requestBody);
+      return schema.create('cases', data);
+    })
   }
 })
 

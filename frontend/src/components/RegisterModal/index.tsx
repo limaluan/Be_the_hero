@@ -45,7 +45,7 @@ export function RegisterModal({ isOpen, onRequestClose }: modalProps) {
             className='register-modal-content'
         >
             <Container>
-                <img src={closeImg} onClick={onRequestClose} />
+                <img src={closeImg} onClick={onRequestClose} alt="Fechar"/>
                 <img src={logoImg} alt="Be the hero" />
 
                 <h1>Cadastro</h1>
